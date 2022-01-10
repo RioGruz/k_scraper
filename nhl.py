@@ -48,7 +48,6 @@ def run_NHL():
 
 
 	web = 'https://www.supersport.hr/sport/dan/30/sport/5/liga/354716' 
-	path = ChromeDriverManager().install()
 
 	# pozivanje drivera - otvaranje browsera
 	driver = webdriver.Chrome(ChromeDriverManager().install())
