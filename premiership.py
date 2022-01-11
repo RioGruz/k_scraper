@@ -50,7 +50,7 @@ def run_premiership():
 	web = 'https://www.supersport.hr/sport/dan/30/sport/5/liga/354716' 
 
 	# pozivanje drivera - otvaranje browsera
-	driver = webdriver.Chrome(ChromeDriverManager().install(), chrome_options=chrome_options)
+	driver = webdriver.Chrome(executable_path='/usr/bin/chromium', chrome_options=chrome_options)
 	driver.get(web)
 
 	# prihvaćanje cookiea
