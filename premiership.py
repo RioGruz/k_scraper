@@ -9,6 +9,8 @@ import time
 import pandas as pd
 import numpy as np
 
+from webdriver_manager.chrome import ChromeDriverManager
+
 import base64
 from io import BytesIO
 
@@ -38,10 +40,10 @@ def run_premiership():
 	st.write("Ukoliko su u utakmice LIVE u tijeku ili trenutno nema ponude, dohvaćeni dataframe neće biti sasvim ispravan!")
 
 	web = 'https://www.supersport.hr/sport/dan/30/sport/5/liga/354716' 
-	path = r"chromedriver.exe"
+# 	path = r"chromedriver.exe"
 
 	# pozivanje drivera - otvaranje browsera
-	driver = webdriver.Chrome(path)
+	driver = webdriver.Chrome(ChromeDriverManager().install())
 	driver.get(web)
 
 	# prihvaćanje cookiea
