@@ -5,9 +5,20 @@ import numpy as np
 import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
+
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.common.exceptions import NoSuchElementException
+
+from selenium.webdriver.chrome.options import Options
+
+options = Options()
+options.add_argument("--no-sandbox") #bypass OS security model
+options.add_argument("--start-maximized") #open Browser in maximized mode
+options.add_argument("--disable-dev-shm-usage") #overcome limited resource problems
+options.add_experimental_option("excludeSwitches", ["enable-automation"])
+options.add_experimental_option('useAutomationExtension', False)
+
 import time
 import pandas as pd
 import numpy as np
@@ -53,7 +64,7 @@ def run_NHL():
 	web = 'https://www.supersport.hr/sport/dan/30/sport/5/liga/354716' 
 
 	# pozivanje drivera - otvaranje browsera
-	driver = webdriver.Chrome(ChromeDriverManager().install())
+	driver = webdriver.Chrome(options=options, executable_path=r'chromedriver.exe')
 	driver.get(web)
 
 	# prihvaćanje cookiea
