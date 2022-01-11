@@ -62,7 +62,7 @@ def run_NHL():
 	web = 'https://www.supersport.hr/sport/dan/30/sport/5/liga/354716' 
 
 	# pozivanje drivera - otvaranje browsera
-	driver = webdriver.Chrome(ChromeDriverManager().install(version="90.0.4430.24"), options=options)
+	driver = webdriver.Chrome(ChromeDriverManager(version="90.0.4430.24").install(), options=options)
 	driver.get(web)
 
 	# prihvaćanje cookiea
