@@ -9,8 +9,9 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 chrome_options = Options()
+chrome_options.add_argument('--headless')
 chrome_options.add_argument('--no-sandbox')
-chrome_options.add_argument('--disable-extensions')
+chrome_options.add_argument('--disable-dev-shm-usage')
 
 import time
 import pandas as pd
@@ -47,10 +48,10 @@ def run_premiership():
 	st.write("Ukoliko su u utakmice LIVE u tijeku ili trenutno nema ponude, dohvaćeni dataframe neće biti sasvim ispravan!")
 
 	web = 'https://www.supersport.hr/sport/dan/30/sport/5/liga/354716' 
-	path = './chromedriver.exe'
+	path = 'chromedriver.exe'
 
 	# pozivanje drivera - otvaranje browsera
-	driver = webdriver.Chrome(path)
+	driver = webdriver.Chrome(path, chrome_options=chrome_options)
 	driver.get(web)
 
 	# prihvaćanje cookiea
