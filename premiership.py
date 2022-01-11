@@ -5,6 +5,13 @@ import numpy as np
 import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
+
+from selenium.webdriver.chrome.options import Options
+
+chrome_options = Options()
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--disable-extensions')
+
 import time
 import pandas as pd
 import numpy as np
@@ -40,10 +47,10 @@ def run_premiership():
 	st.write("Ukoliko su u utakmice LIVE u tijeku ili trenutno nema ponude, dohvaćeni dataframe neće biti sasvim ispravan!")
 
 	web = 'https://www.supersport.hr/sport/dan/30/sport/5/liga/354716' 
-# 	path = r"chromedriver.exe"
+	path = r"chromedriver.exe"
 
 	# pozivanje drivera - otvaranje browsera
-	driver = webdriver.Chrome(ChromeDriverManager().install())
+	driver = webdriver.Chrome(path)
 	driver.get(web)
 
 	# prihvaćanje cookiea
