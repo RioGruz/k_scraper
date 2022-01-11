@@ -47,7 +47,7 @@ def run_premiership():
 	st.write("Ukoliko su u utakmice LIVE u tijeku ili trenutno nema ponude, dohvaćeni dataframe neće biti sasvim ispravan!")
 
 	web = 'https://www.supersport.hr/sport/dan/30/sport/5/liga/354716' 
-	path = r"chromedriver.exe"
+	path = './chromedriver.exe'
 
 	# pozivanje drivera - otvaranje browsera
 	driver = webdriver.Chrome(path)
