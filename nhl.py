@@ -2,8 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-import lxml
-
 import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
