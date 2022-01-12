@@ -32,7 +32,8 @@ def main():
 		st.subheader("Iz izbornika lijevo odaberite željenu opciju")
 
 	elif izbor == "Premiership":
-		run_premiership()
+		st.warning("U izradi")
+		pass
 		
 
 	elif izbor == "NHL":
