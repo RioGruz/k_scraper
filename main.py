@@ -18,7 +18,7 @@ def main():
 	st.header("SUPERSPORT WEB SCRAPER")
 	password = st.text_input("Password", type='password')
 
-	if password != "supersport123":
+	if password != st.secrets["password"]:
 		st.write("Pogrešan password, pokušajte ponovno!")
 		st.stop()
 	else: 
